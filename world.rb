@@ -56,7 +56,7 @@ class Room
     ["small", "medium", "large", "square", "long", "tall", "circular"].sample(random: Random.new)
   end
 
-  def desribe
+  def describe
     ["dark", "dank", "creepy", "smelly", "moldy", "sexy" ].sample(random: Random.new)
   end
 end
