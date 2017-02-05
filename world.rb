@@ -7,19 +7,31 @@ class World
   end
 
   def move_north(player)
-    player.y_pos -= 1 if player.y_pos > 0 else puts "You can't go that way"
+    if player.y_pos > 0
+      player.y_pos -= 1
+    else puts "You can't go that way"
+    end
   end
 
   def move_south(player)
-    player.y_pos += 1 if player.y_pos < WORLD_HEIGHT - 1 else puts "You can't go that way"
+    if player.y_pos < WORLD_HEIGHT - 1
+      player.y_pos += 1
+    else puts "You can't go that way"
+    end
   end
 
   def move_east(player)
-    player.x_pos += 1 if player.x_pos < WORLD_WIDTH - 1 else puts "You can't go that way"
+    if player.x_pos < WORLD_WIDTH - 1
+      player.x_pos += 1
+    else puts "You can't go that way"
+    end
   end
 
   def move_west(player)
-    player.x_pos -= 1 if player.x_pos > 0 else puts "You can't go that way"
+    if player.x_pos > 0
+      player.x_pos -= 1
+    else puts "You can't go that way"
+    end
   end
 
   def get_room_of(player)
