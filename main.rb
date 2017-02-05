@@ -27,7 +27,7 @@ class Game
   end
 
   def take_player_input
-    print "What will do you?"
+    print "What will do you? "
     gets.chomp.to_sym
   end
 
