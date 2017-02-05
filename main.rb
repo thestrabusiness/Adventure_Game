@@ -1,4 +1,4 @@
-Dir["**.*"].each {|file| require_relative file }
+Dir["**.rb"].each {|file| require_relative file }
 
 class Game
   ACTIONS = [
