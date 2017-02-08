@@ -7,19 +7,19 @@ class World
   end
 
   def move_north(player)
-    player.y_pos -= 1 if player.y_pos > 0 else puts "You can't go that way"
+    player.y_pos > 0 ? player.y_pos -= 1 : puts "You can't go that way"
   end
 
   def move_south(player)
-    player.y_pos += 1 if player.y_pos < WORLD_HEIGHT - 1 else puts "You can't go that way"
+    player.y_pos < WORLD_HEIGHT - 1 ? player.y_pos += 1 : puts "You can't go that way"
   end
 
   def move_east(player)
-    player.x_pos += 1 if player.x_pos < WORLD_WIDTH - 1 else puts "You can't go that way"
+    player.x_pos < WORLD_WIDTH - 1 ? player.x_pos += 1 : puts "You can't go that way"
   end
 
   def move_west(player)
-    player.x_pos -= 1 if player.x_pos > 0 else puts "You can't go that way"
+    player.x_pos > 0 ? player.x_pos -= 1 : puts "You can't go that way"
   end
 
   def get_room_of(player)
@@ -56,7 +56,7 @@ class Room
     ["small", "medium", "large", "square", "long", "tall", "circular"].sample(random: Random.new)
   end
 
-  def desribe
+  def describe
     ["dark", "dank", "creepy", "smelly", "moldy", "sexy" ].sample(random: Random.new)
   end
 end
