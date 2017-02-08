@@ -13,6 +13,7 @@ class Game
   end
 
   private
+
   def start_game
     while @player.is_alive?
       @current_room = @world.get_room_of(@player)

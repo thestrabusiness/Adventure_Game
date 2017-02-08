@@ -3,23 +3,23 @@ class World
   WORLD_HEIGHT = 10
 
   def initialize
-    @rooms = Array.new(WORLD_HEIGHT, Array.new(WORLD_WIDTH)) #create a WORLD_HIGHT*WORLD_WIDTH 2d array to represent world
+    @rooms = Array.new(WORLD_HEIGHT, Array.new(WORLD_WIDTH)) #create a WORLD_HEIGHT*WORLD_WIDTH 2d array to represent world
   end
 
   def move_north(player)
-    player.y_pos > 0 ? player.y_pos -= 1 : puts "You can't go that way"
+    player.y_pos > 0 ?( player.y_pos -= 1) : (puts "You can't go that way")
   end
 
   def move_south(player)
-    player.y_pos < WORLD_HEIGHT - 1 ? player.y_pos += 1 : puts "You can't go that way"
+    player.y_pos < WORLD_HEIGHT - 1 ? (player.y_pos += 1) : (puts "You can't go that way")
   end
 
   def move_east(player)
-    player.x_pos < WORLD_WIDTH - 1 ? player.x_pos += 1 : puts "You can't go that way"
+    player.x_pos < WORLD_WIDTH - 1 ? (player.x_pos += 1) : (puts "You can't go that way")
   end
 
   def move_west(player)
-    player.x_pos > 0 ? player.x_pos -= 1 : puts "You can't go that way"
+    player.x_pos > 0 ? (player.x_pos -= 1) : (puts "You can't go that way")
   end
 
   def get_room_of(player)
@@ -48,15 +48,16 @@ class Room
   end
 
   private
+
   def set_room_content
-    [Monster, Sword, Potion, Armor].sample(random: Random.new).new
+    [Monster, Sword, Potion, Armor].sample.new
   end
 
   def set_room_size
-    ["small", "medium", "large", "square", "long", "tall", "circular"].sample(random: Random.new)
+    ["small", "medium", "large", "square", "long", "tall", "circular"].sample
   end
 
   def describe
-    ["dark", "dank", "creepy", "smelly", "moldy", "sexy" ].sample(random: Random.new)
+    ["dark", "dank", "creepy", "smelly", "moldy", "sexy" ].sample
   end
 end
